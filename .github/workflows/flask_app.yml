@@ -23,6 +23,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
+          ssh -V
           cd /home/e19300/CO544/CO544-Flask-Backend
           git checkout main
           git pull origin main
