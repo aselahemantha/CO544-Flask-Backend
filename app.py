@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 
-model_path = './models/random_forest.pkl'
+model_path = './models/deploy.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
