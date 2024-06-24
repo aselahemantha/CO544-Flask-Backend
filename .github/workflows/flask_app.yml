@@ -32,3 +32,4 @@ jobs:
           conda activate /home/e19300//miniconda3/envs/flaskApp/
           cp -rv /home/e19452/ml_project/e19-co544-Diabetes-Health-Indicator/models/* /home/e19300/CO544/CO544-Flask-Backend/models
           nohup gunicorn --bind 0.0.0.0:8888 wsgi:app &
+          disown
