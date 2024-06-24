@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
 import pandas as pd
 
@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to the Random Forest Classifier API!"
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
