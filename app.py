@@ -22,7 +22,15 @@ def predict():
 
         prediction = model.predict(data_df)
 
-        return jsonify({'Diabetic Prediction': prediction.tolist()})
+        prediction_mapping = {
+            0.0: 'No Diabetic',
+            1.0: 'Pre Diabetic',
+            2.0: 'Diabetic'
+        }
+
+        mapped_prediction = [prediction_mapping.get(pred, 'unknown') for pred in prediction]
+
+        return jsonify({'Diabetic Prediction': mapped_prediction})
 
     except Exception as e:
         return jsonify({'error': str(e)})
