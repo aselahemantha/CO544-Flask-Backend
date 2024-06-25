@@ -30,6 +30,7 @@ jobs:
           mkdir models
           git checkout main
           git pull origin main
+          kill $(ps aux | grep gunicorn | grep -v grep | awk '{print $2}')
           source ~/.bashrc
           conda deactivate
           conda activate /home/e19300//miniconda3/envs/flaskApp/
